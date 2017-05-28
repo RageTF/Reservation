@@ -14,9 +14,13 @@ public class ReservEntity {
     private Timestamp departureDate;
     private int cottageId;
     private int userId;
+    private String phone;
+    private CottageEntity cottageEntity;
+    private UserEntity userEntity;
 
     @Id
     @Column(name = "reserv_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getReservId() {
         return reservId;
     }
@@ -55,6 +59,26 @@ public class ReservEntity {
         this.cottageId = cottageId;
     }
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "cottage_id",nullable = false,insertable = false,updatable = false)
+    public CottageEntity getCottageEntity(){
+        return cottageEntity;
+    }
+
+    public void setCottageEntity(CottageEntity cottageEntity) {
+        this.cottageEntity = cottageEntity;
+    }
+
+    @Basic
+    @Column(name = "phone")
+    public String getPhone(){
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone=phone;
+    }
+
     @Basic
     @Column(name = "user_id")
     public int getUserId() {
@@ -63,6 +87,16 @@ public class ReservEntity {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id",nullable = false,insertable = false,updatable = false)
+    public UserEntity getUserEntity(){
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     @Override

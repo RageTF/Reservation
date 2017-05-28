@@ -5,9 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import spring.fx.controllers.AdminController;
-import spring.fx.controllers.LoginController;
-import spring.fx.controllers.MainController;
+import spring.fx.controllers.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +32,20 @@ public class ConfigurationControllers {
         return loadView("fxml/login.fxml");
     }
 
+    @Bean(name = "registration_view")
+    public View getRegistrationView() throws IOException {
+        return loadView("fxml/registration.fxml");
+    }
+
+    @Bean(name = "reservation_view")
+    public View getReservationView() throws IOException {
+        return loadView("fxml/add_reserv.fxml");
+    }
+
+    public ReservationController getReservationController() throws IOException {
+        return (ReservationController) getReservationView().getController();
+    }
+
     @Bean
     public MainController getMainController() throws IOException {
         return (MainController) getMainView().getController();
@@ -47,6 +59,11 @@ public class ConfigurationControllers {
     @Bean
     public LoginController getLoginController() throws IOException {
         return (LoginController) getLoginView().getController();
+    }
+
+    @Bean
+    public RegistrationController getRegistrationController() throws IOException {
+        return (RegistrationController) getRegistrationView().getController();
     }
 
 

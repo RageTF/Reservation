@@ -19,6 +19,7 @@ public class CottageEntity {
 
     @Id
     @Column(name = "cottage_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getCottageId() {
         return cottageId;
     }

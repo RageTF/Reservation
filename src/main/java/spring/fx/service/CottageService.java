@@ -1,6 +1,7 @@
 package spring.fx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.fx.entity.CottageEntity;
 import spring.fx.repository.CottageRepository;
 import spring.fx.service.interfaces.CottageServiceInterface;
@@ -10,13 +11,14 @@ import java.util.List;
 /**
  * Created by Rage on 22.05.2017.
  */
+@Service
 public class CottageService implements CottageServiceInterface {
 
     @Autowired
     CottageRepository mCottageRepository;
 
     @Override
-    public void addCottage(CottageEntity cottageEntity) {
+    public void addOrUpdateCottage(CottageEntity cottageEntity) {
         mCottageRepository.save(cottageEntity);
     }
 

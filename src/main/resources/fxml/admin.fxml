@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="spring.fx.controllers.AdminController">
-    <children>
 
-    </children>
+<AnchorPane prefHeight="401.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spring.fx.controllers.AdminController">
+   <children>
+      <TabPane layoutY="44.0" prefHeight="357.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cottages">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="cottages" layoutX="11.0" layoutY="7.0" prefHeight="298.0" prefWidth="672.0">
+
+                        </ListView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Reservations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                         <ListView fx:id="reservations" layoutX="6.0" layoutY="8.0" prefHeight="306.0" prefWidth="688.0">
+
+                         </ListView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Add cottage">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="cottageNumber" layoutX="207.0" layoutY="14.0" promptText="Cottage number" />
+                        <TextField fx:id="countOfBerth" layoutX="207.0" layoutY="45.0" promptText="Count of  berths" />
+                        <CheckBox fx:id="parkingPlace" layoutX="207.0" layoutY="84.0" mnemonicParsing="false" text="Parking place" />
+                        <CheckBox fx:id="childPlace" layoutX="207.0" layoutY="105.0" mnemonicParsing="false" text="Child place" />
+                        <CheckBox fx:id="summerHouse" layoutX="207.0" layoutY="126.0" mnemonicParsing="false" text="Summer house" />
+                        <CheckBox fx:id="allowAnimals" layoutX="207.0" layoutY="149.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="131.0" text="Allow animals" />
+                        <TextField fx:id="cost" layoutX="207.0" layoutY="177.0" promptText="Cost" />
+                        <Button fx:id="add" layoutX="268.0" layoutY="215.0" mnemonicParsing="false" onAction="#addCottage" text="Add " />
+                        <Label fx:id="info" layoutX="277.0" layoutY="255.0" />
+                     </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="refresh" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+      <Button fx:id="logout" layoutX="84.0" layoutY="6.0" mnemonicParsing="false" onAction="#logout" text="Log out" />
+   </children>
 </AnchorPane>

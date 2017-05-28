@@ -7,8 +7,9 @@ import spring.fx.entity.UserEntity;
  */
 public interface UserServiceInterface {
 
+    UserEntity getUserByLogin(String login);
     UserEntity getUserByLoginAndPassword(String login,String password);
     boolean addUser(UserEntity userEntity);
-    boolean contain(String login, String email);
+    boolean contain(String login);
 
 }

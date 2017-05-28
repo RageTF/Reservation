@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface CottageServiceInterface {
 
-    void addCottage(CottageEntity cottageEntity);
+    void addOrUpdateCottage(CottageEntity cottageEntity);
     void removeCottage(CottageEntity cottageEntity);
     void removeCottageById(int id);
     List<CottageEntity> getAllCottage();

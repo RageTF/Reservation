@@ -19,7 +19,7 @@ public class FxApplication extends AbstractFxApplication {
     private String windowTitle;
 
 
-    @Qualifier("main_view")
+    @Qualifier("login_view")
     @Autowired
     private ConfigurationControllers.View view;
 

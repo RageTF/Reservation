@@ -1,6 +1,5 @@
 package spring.fx.repository;
 
-import javafx.collections.ObservableList;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import spring.fx.entity.CottageEntity;
@@ -13,7 +12,6 @@ import java.util.List;
 @Repository
 public interface CottageRepository extends CrudRepository<CottageEntity,Integer> {
 
-    ObservableList<CottageEntity> findAll();
-
+    List<CottageEntity> findAll();
 
 }

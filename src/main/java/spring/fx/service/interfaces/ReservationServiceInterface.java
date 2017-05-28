@@ -12,7 +12,7 @@ public interface ReservationServiceInterface {
     List<ReservEntity> getAllReserv();
     ReservEntity getReservById(int id);
     List<ReservEntity> getReservByUserId(int userId);
-    void addReserv(ReservEntity reservEntity);
+    void addOrUpdateReserv(ReservEntity reservEntity);
     void removeReserv(ReservEntity reservEntity);
     void removeReservById(int id);
 

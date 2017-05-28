@@ -1,6 +1,7 @@
 package spring.fx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.fx.entity.ReservEntity;
 import spring.fx.repository.ReservationRepository;
 import spring.fx.service.interfaces.ReservationServiceInterface;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by Rage on 22.05.2017.
  */
+@Service
 public class ReservationService implements ReservationServiceInterface {
 
     @Autowired
@@ -31,7 +33,7 @@ public class ReservationService implements ReservationServiceInterface {
     }
 
     @Override
-    public void addReserv(ReservEntity reservEntity) {
+    public void addOrUpdateReserv(ReservEntity reservEntity) {
         mReservationRepository.save(reservEntity);
     }
 
